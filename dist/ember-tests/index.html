@@ -59,7 +59,7 @@
           ENV.__test_hook_count__ += object;
         });
 
-        window.ENV.FEATURES = !!QUnit.urlParams.prod ? {"features-stripped-test":false,"ember-libraries-isregistered":false,"ember-improved-instrumentation":false,"ember-metal-weakmap":false,"ember-glimmer-allow-backtracking-rerender":false,"ember-testing-resume-test":false,"ember-factory-for":true,"ember-no-double-extend":false,"mandatory-setter":false,"ember-glimmer-detect-backtracking-rerender":false} : {"features-stripped-test":false,"ember-libraries-isregistered":false,"ember-improved-instrumentation":false,"ember-metal-weakmap":false,"ember-glimmer-allow-backtracking-rerender":false,"ember-testing-resume-test":false,"ember-factory-for":true,"ember-no-double-extend":false,"mandatory-setter":true,"ember-glimmer-detect-backtracking-rerender":true};
+        window.ENV.FEATURES = !!QUnit.urlParams.prod ? {"features-stripped-test":false,"ember-libraries-isregistered":false,"ember-improved-instrumentation":false,"ember-metal-weakmap":false,"ember-glimmer-allow-backtracking-rerender":true,"ember-testing-resume-test":false,"ember-factory-for":true,"ember-no-double-extend":false,"ember-glimmer-detect-backtracking-rerender":false,"mandatory-setter":false} : {"features-stripped-test":false,"ember-libraries-isregistered":false,"ember-improved-instrumentation":false,"ember-metal-weakmap":false,"ember-glimmer-allow-backtracking-rerender":true,"ember-testing-resume-test":false,"ember-factory-for":true,"ember-no-double-extend":false,"ember-glimmer-detect-backtracking-rerender":true,"mandatory-setter":true};
 
         // Handle extending prototypes
         ENV['EXTEND_PROTOTYPES'] = !!QUnit.urlParams.extendprototypes;

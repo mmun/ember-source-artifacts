@@ -11263,7 +11263,7 @@ enifed('ember-glimmer/renderer', ['exports', 'ember-glimmer/utils/references', '
 
   var runInTransaction = undefined;
 
-  if (false || false) {
+  if (false || true) {
     runInTransaction = _emberMetal.runInTransaction;
   } else {
     runInTransaction = function (context, methodName) {
@@ -14059,7 +14059,7 @@ enifed('ember-glimmer/utils/references', ['exports', 'ember-utils', 'ember-metal
 
   var TwoWayFlushDetectionTag = undefined;
 
-  if (false || false) {
+  if (false || true) {
     TwoWayFlushDetectionTag = (function () {
       function _class(tag, key, ref) {
         this.tag = tag;
@@ -14127,7 +14127,7 @@ enifed('ember-glimmer/utils/references', ['exports', 'ember-utils', 'ember-metal
       this._parentValue = parentValue;
       this._propertyKey = propertyKey;
 
-      if (false || false) {
+      if (false || true) {
         this.tag = new TwoWayFlushDetectionTag(_emberMetal.tagForProperty(parentValue, propertyKey), propertyKey, this);
       } else {
         this.tag = _emberMetal.tagForProperty(parentValue, propertyKey);
@@ -14142,7 +14142,7 @@ enifed('ember-glimmer/utils/references', ['exports', 'ember-utils', 'ember-metal
       var _parentValue = this._parentValue;
       var _propertyKey = this._propertyKey;
 
-      if (false || false) {
+      if (false || true) {
         this.tag.didCompute(_parentValue);
       }
 
@@ -14171,7 +14171,7 @@ enifed('ember-glimmer/utils/references', ['exports', 'ember-utils', 'ember-metal
       this._parentObjectTag = parentObjectTag;
       this._propertyKey = propertyKey;
 
-      if (false || false) {
+      if (false || true) {
         var tag = _glimmerReference.combine([parentReferenceTag, parentObjectTag]);
         this.tag = new TwoWayFlushDetectionTag(tag, propertyKey, this);
       } else {
@@ -14197,7 +14197,7 @@ enifed('ember-glimmer/utils/references', ['exports', 'ember-utils', 'ember-metal
           _emberMetal.watchKey(parentValue, _propertyKey);
         }
 
-        if (false || false) {
+        if (false || true) {
           this.tag.didCompute(parentValue);
         }
 
@@ -18508,7 +18508,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
   var META_DESTROYED = 1 << 3;
   var IS_PROXY = 1 << 4;
 
-  if (false || false) {
+  if (false || true) {
     members.lastRendered = ownMap;
     if (_require.has('ember-debug')) {
       //https://github.com/emberjs/ember.js/issues/14732
@@ -18552,7 +18552,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
       // inherited, and we can optimize it much better than JS runtimes.
       this.parent = parentMeta;
 
-      if (false || false) {
+      if (false || true) {
         this._lastRendered = undefined;
       }
 
@@ -20718,7 +20718,7 @@ enifed('ember-metal/property_events', ['exports', 'ember-utils', 'ember-metal/me
 
     _emberMetalTags.markObjectAsDirty(meta, keyName);
 
-    if (false || false) {
+    if (false || true) {
       _emberMetalTransaction.assertNotRendered(obj, keyName, meta);
     }
   }
@@ -22032,18 +22032,18 @@ enifed('ember-metal/transaction', ['exports', 'ember-metal/meta', 'ember-metal/d
       assertNotRendered = undefined;
 
   var raise = _emberMetalDebug.assert;
-  if (false) {
+  if (true) {
     raise = function (message, test) {};
   }
 
   var implication = undefined;
-  if (false) {
+  if (true) {
     implication = 'will be removed in Ember 3.0.';
   } else if (false) {
     implication = 'is no longer supported. See https://github.com/emberjs/ember.js/issues/13948 for more details.';
   }
 
-  if (false || false) {
+  if (false || true) {
     (function () {
       var counter = 0;
       var inTransaction = false;
@@ -39670,7 +39670,7 @@ enifed("ember-views/views/view", ["exports"], function (exports) {
 enifed("ember/features", ["exports"], function (exports) {
   "use strict";
 
-  exports.default = { "features-stripped-test": false, "ember-libraries-isregistered": false, "ember-improved-instrumentation": false, "ember-metal-weakmap": false, "ember-glimmer-allow-backtracking-rerender": false, "ember-testing-resume-test": false, "ember-factory-for": true, "ember-no-double-extend": false, "mandatory-setter": false, "ember-glimmer-detect-backtracking-rerender": false };
+  exports.default = { "features-stripped-test": false, "ember-libraries-isregistered": false, "ember-improved-instrumentation": false, "ember-metal-weakmap": false, "ember-glimmer-allow-backtracking-rerender": true, "ember-testing-resume-test": false, "ember-factory-for": true, "ember-no-double-extend": false, "ember-glimmer-detect-backtracking-rerender": false, "mandatory-setter": false };
 });
 enifed('ember/index', ['exports', 'require', 'ember-environment', 'ember-utils', 'container', 'ember-metal', 'backburner', 'ember-console', 'ember-runtime', 'ember-glimmer', 'ember/version', 'ember-views', 'ember-routing', 'ember-application', 'ember-extension-support'], function (exports, _require, _emberEnvironment, _emberUtils, _container, _emberMetal, _backburner, _emberConsole, _emberRuntime, _emberGlimmer, _emberVersion, _emberViews, _emberRouting, _emberApplication, _emberExtensionSupport) {
   'use strict';
