@@ -18674,6 +18674,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
     // with inheritance at both levels.
 
     Meta.prototype.writeDeps = function writeDeps(subkey, itemkey, value) {
+      // assert(`Cannot call writeDeps after the object is destroyed.`, !this.isMetaDestroyed());
 
       var outerMap = this._getOrCreateOwnMap('_deps');
       var innerMap = outerMap[subkey];
@@ -18811,6 +18812,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
     var capitalized = capitalize(name);
 
     Meta.prototype['write' + capitalized] = function (subkey, value) {
+      // assert(`Cannot call write${capitalized} after the object is destroyed.`, !this.isMetaDestroyed());
 
       var map = this._getOrCreateOwnMap(key);
       map[subkey] = value;
@@ -18839,6 +18841,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
     };
 
     Meta.prototype['clear' + capitalized] = function () {
+      // assert(`Cannot call clear${capitalized} after the object is destroyed.`, !this.isMetaDestroyed());
 
       this[key] = undefined;
     };
@@ -18861,6 +18864,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
     var key = memberProperty(name);
     var capitalized = capitalize(name);
     Meta.prototype['writable' + capitalized] = function (create) {
+      // assert(`Cannot call writable${capitalized} after the object is destroyed.`, !this.isMetaDestroyed());
 
       var ret = this[key];
       if (!ret) {
@@ -18880,6 +18884,7 @@ enifed('ember-metal/meta', ['exports', 'ember-utils', 'ember-metal/features', 'e
     var key = memberProperty(name);
     var capitalized = capitalize(name);
     Meta.prototype['writable' + capitalized] = function (create) {
+      // assert(`Cannot call writable${capitalized} after the object is destroyed.`, !this.isMetaDestroyed());
 
       var ret = this[key];
       if (!ret) {
