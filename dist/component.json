@@ -1,7 +1,7 @@
 {
   "name": "ember",
   "repo": "components/ember",
-  "version": "2.12.2-lts-2-12-loose+f8650983",
+  "version": "2.12.2-lts-2-12-loose+b1d4bf71",
   "license": "MIT",
   "homepage": "https://github.com/emberjs/ember.js",
   "main": "ember.debug.js",

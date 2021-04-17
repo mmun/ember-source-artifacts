@@ -6,7 +6,7 @@
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   2.12.2-lts-2-12-loose+f8650983
+ * @version   2.12.2-lts-2-12-loose+b1d4bf71
  */
 
 var enifed, requireModule, Ember;
@@ -22013,16 +22013,19 @@ enifed("ember-metal/testing", ["exports"], function (exports) {
     testing = !!value;
   }
 });
-enifed('ember-metal/transaction', ['exports', 'ember-metal/meta', 'ember-metal/debug', 'ember-metal/features'], function (exports, _emberMetalMeta, _emberMetalDebug, _emberMetalFeatures) {
+enifed('ember-metal/transaction', ['exports', 'require', 'ember-metal/meta', 'ember-metal/debug', 'ember-metal/features'], function (exports, _require, _emberMetalMeta, _emberMetalDebug, _emberMetalFeatures) {
   'use strict';
 
   var runInTransaction = undefined,
       didRender = undefined,
       assertNotRendered = undefined;
 
-  var raise = _emberMetalDebug.assert;
-  if (true) {
-    raise = function (message, test) {};
+  var raise = undefined;
+
+  if (_require.has('ember-debug')) {
+    if (true) {
+      raise = function (message, test) {};
+    }
   }
 
   var implication = undefined;
@@ -22063,29 +22066,6 @@ enifed('ember-metal/transaction', ['exports', 'ember-metal/meta', 'ember-metal/d
         var lastRendered = meta.readableLastRendered();
 
         if (lastRendered && lastRendered[key] === counter) {
-          raise((function () {
-            var templateMap = meta.readableLastRenderedTemplateMap();
-            var lastRenderedIn = templateMap[key];
-            var currentlyIn = debugStack.peek();
-
-            var referenceMap = meta.readableLastRenderedReferenceMap();
-            var lastRef = referenceMap[key];
-            var parts = [];
-            var label = undefined;
-
-            if (lastRef) {
-              while (lastRef && lastRef._propertyKey) {
-                parts.unshift(lastRef._propertyKey);
-                lastRef = lastRef._parentReference;
-              }
-
-              label = parts.join('.');
-            } else {
-              label = 'the same value';
-            }
-
-            return 'You modified "' + label + '" twice on ' + object + ' in a single render. It was rendered in ' + lastRenderedIn + ' and modified in ' + currentlyIn + '. This was unreliable and slow in Ember 1.x and ' + implication;
-          })(), false);
 
           shouldReflush = true;
         }
@@ -40219,7 +40199,7 @@ enifed('ember/index', ['exports', 'require', 'ember-environment', 'ember-utils',
 enifed("ember/version", ["exports"], function (exports) {
   "use strict";
 
-  exports.default = "2.12.2-lts-2-12-loose+f8650983";
+  exports.default = "2.12.2-lts-2-12-loose+b1d4bf71";
 });
 enifed('internal-test-helpers/apply-mixins', ['exports', 'ember-utils'], function (exports, _emberUtils) {
   'use strict';

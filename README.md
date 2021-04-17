@@ -1,7 +1,7 @@
 # Ember 2.12 "Loose mode" with backtracking enabled
 
 - ember-source branch: https://github.com/mmun/ember.js/tree/lts-2-12-loose
-- ember-source commit: https://github.com/mmun/ember.js/commit/f8650983324e49dfa920c9da0820f462258fc12f
+- ember-source commit: https://github.com/mmun/ember.js/commit/b1d4bf71de8f5aaae1993a7ea4c47ca3bee6a821
 - Build flags: ALLOW_BACKTRACKING=true
 
 This is a build artifact of [mmun](https://github.com/mmun)'s custom Ember 2.12 "loose mode".
